@@ -11,7 +11,9 @@ component {
         this.datasources["dsn1"] = {
             driver = "mysql",
             class = "com.mysql.jdbc.Driver",
-            url = "jdbc:mysql://database.backend:3306/#server.system.environment.MARIADB_DATABASE#?useUnicode=true&characterEncoding=UTF-8",
+            url = "jdbc:mysql://database.backend:3306/"
+                & "#server.system.environment.MARIADB_DATABASE#"
+                & "?useUnicode=true&characterEncoding=UTF-8",
             username = server.system.environment.MARIADB_USER,
             password = server.system.environment.MARIADB_PASSWORD
         }
