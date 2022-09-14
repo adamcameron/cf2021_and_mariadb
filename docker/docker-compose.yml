@@ -5,6 +5,8 @@ services:
         build:
             context: ./cf2021
         environment:
+            - MARIADB_DATABASE=${MARIADB_DATABASE}
+            - MARIADB_USER=${MARIADB_USER}
             - MARIADB_PASSWORD=${MARIADB_PASSWORD}
             - acceptEULA=YES
             - password=${CF_PASSWORD}
@@ -40,23 +42,8 @@ services:
                 aliases:
                     - database.backend
 
-    ftp:
-        image: delfer/alpine-ftp-server
-        ports:
-            - "23:21"
-            - "23000-23010:21000-21010"
-        environment:
-            - USERS=ftpuser|password1234
-        volumes:
-            - ftpDirectory:/ftp/ftpuser
-        networks:
-            backend:
-                aliases:
-                    - ftp.backend
-
 volumes:
     mariaDbData:
-    ftpDirectory:
 
 networks:
     backend:

@@ -1,4 +1,4 @@
-USE cf2021_and_mariadb;
+USE db1;
 
 CREATE TABLE test (
     id INT NOT NULL,
