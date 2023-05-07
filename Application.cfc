@@ -4,7 +4,7 @@ component {
     loadDatasources()
 
     private void function setSettings() {
-        this.name = "app1"
+        this.name = "app1";
     }
 
     private void function loadDataSources() {

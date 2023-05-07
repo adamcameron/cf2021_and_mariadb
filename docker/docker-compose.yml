@@ -12,10 +12,10 @@ services:
             - password=${CF_PASSWORD}
         volumes:
             - ../:/app
-            - ../../../cfml/:/app/cfml
+            - ../../cfml/:/app/cfml/
             - ../var/log/coldfusion/:/opt/coldfusion/cfusion/logs
         ports:
-            - "8500:8500"
+            - "8521:8500"
         stdin_open: true
         tty: true
         networks:

@@ -7,6 +7,9 @@ RUN apt-get install gnupg ca-certificates openjdk-11-jdk --yes
 COPY ./root_home/.bashrc /root/.bashrc
 COPY ./root_home/.vimrc /root/.vimrc
 
+COPY ./web.xml /opt/coldfusion/cfusion/runtime/conf/web.xml
+
+
 COPY ./lib/mysql-connector-java-8.0.28.jar /opt/coldfusion/cfusion/lib/mysql-connector-java-8.0.28.jar
 
 WORKDIR  /app
