@@ -17,6 +17,10 @@ WORKDIR  /app
 RUN /opt/coldfusion/cfusion/bin/cfpm.sh install debugger
 RUN /opt/coldfusion/cfusion/bin/cfpm.sh install ftp
 
+RUN sed -i \
+    "s/<var name='robust_enabled'><boolean value='[^']*'\/><\/var>/<var name='robust_enabled'><boolean value='true'\/><\/var>/g" \
+    /opt/coldfusion/cfusion/lib/neo-debug.xml
+
 COPY ./commandbox.properties /usr/local/bin/commandbox.properties
 RUN curl -fsSl https://downloads.ortussolutions.com/debs/gpg | gpg --dearmor | tee /usr/share/keyrings/ortussolutions.gpg > /dev/null
 RUN echo "deb [signed-by=/usr/share/keyrings/ortussolutions.gpg] https://downloads.ortussolutions.com/debs/noarch /" | tee /etc/apt/sources.list.d/commandbox.list
