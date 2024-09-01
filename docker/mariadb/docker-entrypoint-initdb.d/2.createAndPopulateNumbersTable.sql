@@ -15,7 +15,11 @@ VALUES
     (3, 'three', 'toru'),
     (4, 'four', 'wha'),
     (5, 'five', 'rima'),
-    (6, 'rima', 'ono')
+    (6, 'six', 'ono'),
+	(7, 'seven', 'whitu'),
+	(8, 'eight', 'waru'),
+	(9, 'nine', 'iwa'),
+	(10, 'ten', 'tekau')
 ;
 
 ALTER TABLE numbers MODIFY COLUMN id INT auto_increment;
